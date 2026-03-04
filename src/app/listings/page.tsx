@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { getAllListings } from "@/lib/listings";
 import { ListingsSearch } from "@/components/listings-search";
@@ -22,7 +23,15 @@ export default function ListingsPage() {
         </div>
       </section>
       <section className="bg-cream-light">
-        <ListingsSearch listings={listings} />
+        <Suspense
+          fallback={
+            <div className="flex h-[60vh] items-center justify-center">
+              <span className="text-[0.833rem] text-gray-text">Loading listings...</span>
+            </div>
+          }
+        >
+          <ListingsSearch listings={listings} />
+        </Suspense>
       </section>
     </>
   );
