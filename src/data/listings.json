@@ -1,0 +1,258 @@
+[
+  {
+    "id": "84ecfe20-bf22-48c7-aa64-44e9b5d86f8f",
+    "slug": "1101-euclid-ave-unit-05",
+    "address": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139",
+    "streetAddress": "1101 Euclid Ave, Unit 05",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33139",
+    "rent": 1899,
+    "rentFormatted": "$1,899",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 420,
+    "neighborhood": "South Beach",
+    "availableDate": "2026-04-01",
+    "availableDateFormatted": "Apr 1, 2026",
+    "description": "Enjoy this spacious studio apartment situated directly in the heart of South Beach. Located a few blocks away from Flamingo Park which houses an aquatic center, tennis courts, and a dog park (among other things). Only a few steps to EVERYTHING including the beach and the best shopping / dining that the city has to offer.\n\nThis charming 420 square foot studio brings a large living area, plenty of storage space, a recently renovated kitchen and bathroom, and natural light flooding in. This won't last long so apply today!\n\nUtilities are included for an additional $30/mo.\nWater Sewer Trash Hot Water (Gas)",
+    "images": [
+      {
+        "id": "4d11847e-ce5f-41d9-adc1-32d6f9a0f1e3",
+        "url": "https://images.cdn.appfolio.com/maia/images/4d11847e-ce5f-41d9-adc1-32d6f9a0f1e3/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "64aaed38-ef2c-4378-8857-5f34f3cc40c0",
+        "url": "https://images.cdn.appfolio.com/maia/images/64aaed38-ef2c-4378-8857-5f34f3cc40c0/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "20730a43-b678-47b3-b676-9203619a4d97",
+        "url": "https://images.cdn.appfolio.com/maia/images/20730a43-b678-47b3-b676-9203619a4d97/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "4723ca60-28d8-4e90-8a9e-740f84a9ac46",
+        "url": "https://images.cdn.appfolio.com/maia/images/4723ca60-28d8-4e90-8a9e-740f84a9ac46/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "cf64d542-e37a-4ca4-8f66-7458b3455728",
+        "url": "https://images.cdn.appfolio.com/maia/images/cf64d542-e37a-4ca4-8f66-7458b3455728/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "7027eed5-41cd-4ff3-8e3e-c9dc5254e7b6",
+        "url": "https://images.cdn.appfolio.com/maia/images/7027eed5-41cd-4ff3-8e3e-c9dc5254e7b6/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "56531caf-f2b4-465e-b94a-79700e71ffd2",
+        "url": "https://images.cdn.appfolio.com/maia/images/56531caf-f2b4-465e-b94a-79700e71ffd2/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "c26cfb6f-542b-457d-a067-b3c83ee20c95",
+        "url": "https://images.cdn.appfolio.com/maia/images/c26cfb6f-542b-457d-a067-b3c83ee20c95/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "92df0330-3190-4336-a4b6-be8e0df07527",
+        "url": "https://images.cdn.appfolio.com/maia/images/92df0330-3190-4336-a4b6-be8e0df07527/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "cc0807d2-12d2-44f6-9044-e06e25952cd6",
+        "url": "https://images.cdn.appfolio.com/maia/images/cc0807d2-12d2-44f6-9044-e06e25952cd6/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "aab8816e-d260-4733-8bca-6e8076a85a94",
+        "url": "https://images.cdn.appfolio.com/maia/images/aab8816e-d260-4733-8bca-6e8076a85a94/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "b0762847-fef3-4494-b3a2-45cde45860af",
+        "url": "https://images.cdn.appfolio.com/maia/images/b0762847-fef3-4494-b3a2-45cde45860af/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "0ef3030d-123a-47e3-bd66-07b6fe7b2174",
+        "url": "https://images.cdn.appfolio.com/maia/images/0ef3030d-123a-47e3-bd66-07b6fe7b2174/large.jpg",
+        "alt": "1101 Euclid Ave, Unit 05, Miami Beach, FL 33139"
+      },
+      {
+        "id": "b1b0eb33-62af-4b0a-9273-ae46acda3937",
+        "url": "https://images.cdn.appfolio.com/maia/images/b1b0eb33-62af-4b0a-9273-ae46acda3937/large.png",
+        "alt": "Maia Management"
+      }
+    ],
+    "amenities": [
+      "On-site laundry"
+    ],
+    "petPolicy": "Cats allowed, Dogs allowed",
+    "applicationFee": 75,
+    "securityDeposit": 1899,
+    "utilitiesNote": "Utilities are included for an additional $30/mo.",
+    "applyUrl": "https://maia.appfolio.com/listings/rental_applications/new?listable_uid=84ecfe20-bf22-48c7-aa64-44e9b5d86f8f&source=Website",
+    "lat": 25.782037,
+    "lng": -80.134844,
+    "syncedAt": "2026-03-04T18:35:47.481Z"
+  },
+  {
+    "id": "2e084be4-a376-4a44-8dc4-5d1721935985",
+    "slug": "1044-pennsylvania-ave-unit-10",
+    "address": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139",
+    "streetAddress": "1044 Pennsylvania Ave, Unit 10",
+    "city": "Miami Beach",
+    "state": "FL",
+    "zip": "33139",
+    "rent": 1899,
+    "rentFormatted": "$1,899",
+    "beds": 0,
+    "baths": 1,
+    "sqft": 410,
+    "neighborhood": "South Beach",
+    "availableDate": "now",
+    "availableDateFormatted": "Available Now",
+    "description": "Welcome to your dream home! Be the first to experience the allure of this newly-renovated studio apartment boasting 410 square feet of stylish, modern living space. As you walk through the door, you'll be greeted by the bright and airy living space. In the kitchen, enjoy the luxury of stunning new countertops and stainless-steel appliances including a dishwasher, a rare find in South Beach! \n\nThe apartment is located within a few minutes walk of everything that South Beach has to offer including the beach and the best shopping and dining in Miami. A few blocks away lies Flamingo Park where you can enjoy the city's aquatic center, tennis courts, and dog park among other things. This won't last long so come and see what Miami Beach living is all about!\n\nUtilities are included for an additional $30/mo.\nWater Sewer Trash Hot Water (Gas)",
+    "images": [
+      {
+        "id": "6714cabe-014e-44a1-a00f-d63f519f6f52",
+        "url": "https://images.cdn.appfolio.com/maia/images/6714cabe-014e-44a1-a00f-d63f519f6f52/large.jpg",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "279fb29f-6006-4e5d-8cfa-6c985973a7f2",
+        "url": "https://images.cdn.appfolio.com/maia/images/279fb29f-6006-4e5d-8cfa-6c985973a7f2/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "441caba2-1018-4520-8d4c-7edca3a2b820",
+        "url": "https://images.cdn.appfolio.com/maia/images/441caba2-1018-4520-8d4c-7edca3a2b820/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "6aea26e7-0351-4876-acdc-270425873ef8",
+        "url": "https://images.cdn.appfolio.com/maia/images/6aea26e7-0351-4876-acdc-270425873ef8/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "f31c40d7-c770-4221-9a43-71ce6310c0fd",
+        "url": "https://images.cdn.appfolio.com/maia/images/f31c40d7-c770-4221-9a43-71ce6310c0fd/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "67d7e24c-e6a4-463b-80d9-4e5cb61db5a6",
+        "url": "https://images.cdn.appfolio.com/maia/images/67d7e24c-e6a4-463b-80d9-4e5cb61db5a6/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "12865d23-3cea-40f2-991b-63da53d3e7e4",
+        "url": "https://images.cdn.appfolio.com/maia/images/12865d23-3cea-40f2-991b-63da53d3e7e4/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "526db45d-cdc4-41f0-98b8-ea132a1a28db",
+        "url": "https://images.cdn.appfolio.com/maia/images/526db45d-cdc4-41f0-98b8-ea132a1a28db/large.png",
+        "alt": "1044 Pennsylvania Ave, Unit 10, Miami Beach, FL 33139"
+      },
+      {
+        "id": "b1b0eb33-62af-4b0a-9273-ae46acda3937",
+        "url": "https://images.cdn.appfolio.com/maia/images/b1b0eb33-62af-4b0a-9273-ae46acda3937/large.png",
+        "alt": "Maia Management"
+      }
+    ],
+    "amenities": [
+      "On-site laundry"
+    ],
+    "petPolicy": "Cats allowed, Dogs allowed",
+    "applicationFee": 75,
+    "securityDeposit": 1899,
+    "utilitiesNote": "Utilities are included for an additional $30/mo.",
+    "applyUrl": "https://maia.appfolio.com/listings/rental_applications/new?listable_uid=2e084be4-a376-4a44-8dc4-5d1721935985&source=Website",
+    "lat": 25.7814985,
+    "lng": -80.1343765,
+    "syncedAt": "2026-03-04T18:35:47.481Z"
+  },
+  {
+    "id": "f9d8475f-a60f-411a-aaf7-9d640b53d5a9",
+    "slug": "1603-sw-8th-st-unit-11",
+    "address": "1603 SW 8th St, Unit 11, Miami, FL 33135",
+    "streetAddress": "1603 SW 8th St, Unit 11",
+    "city": "Miami",
+    "state": "FL",
+    "zip": "33135",
+    "rent": 1395,
+    "rentFormatted": "$1,395",
+    "beds": 1,
+    "baths": 1,
+    "sqft": 462,
+    "neighborhood": "Little Havana",
+    "availableDate": "2026-03-10",
+    "availableDateFormatted": "Mar 10, 2026",
+    "description": "Enjoy this spacious 1bed/1bath apartment situated directly in the heart of Little Havana, Calle Ocho. With the apartment recently undergoing a fresh revitalization, you'll feel right at home while still experiencing the history and atmosphere around you. The building has a few restaurants and a barbershop (among other things) on the first floor, with an easy walk to everything else Calle Ocho has to offer.\n\nUtilities are included for an additional $30/mo.\nWater Sewer Trash Hot Water (Gas)\n\nThis sophisticated 500-square-foot apartment brings a large living area with plenty of storage space along",
+    "images": [
+      {
+        "id": "b8c9595d-f25f-4e42-b300-cda84fb3b270",
+        "url": "https://images.cdn.appfolio.com/maia/images/b8c9595d-f25f-4e42-b300-cda84fb3b270/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "566cef3b-b023-4808-865b-c8a5f66589b1",
+        "url": "https://images.cdn.appfolio.com/maia/images/566cef3b-b023-4808-865b-c8a5f66589b1/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "7c8db238-798a-4570-99c1-6fe77d56da9d",
+        "url": "https://images.cdn.appfolio.com/maia/images/7c8db238-798a-4570-99c1-6fe77d56da9d/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "edb7c121-fe29-4bb9-9993-a8647671fd81",
+        "url": "https://images.cdn.appfolio.com/maia/images/edb7c121-fe29-4bb9-9993-a8647671fd81/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "dc49c8c4-26a4-428e-b1e5-fe002444b0ed",
+        "url": "https://images.cdn.appfolio.com/maia/images/dc49c8c4-26a4-428e-b1e5-fe002444b0ed/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "b27418a0-09a1-4c59-adbf-d2e6b8aa31e7",
+        "url": "https://images.cdn.appfolio.com/maia/images/b27418a0-09a1-4c59-adbf-d2e6b8aa31e7/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "40bee2c2-6742-4d6a-bad9-151d70e7e7e9",
+        "url": "https://images.cdn.appfolio.com/maia/images/40bee2c2-6742-4d6a-bad9-151d70e7e7e9/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "a09a8474-d32a-41e4-ab09-b409a5dd5f63",
+        "url": "https://images.cdn.appfolio.com/maia/images/a09a8474-d32a-41e4-ab09-b409a5dd5f63/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "3452744c-ae81-4153-b28f-e7e84e308322",
+        "url": "https://images.cdn.appfolio.com/maia/images/3452744c-ae81-4153-b28f-e7e84e308322/large.png",
+        "alt": "1603 SW 8th St, Unit 11, Miami, FL 33135"
+      },
+      {
+        "id": "b1b0eb33-62af-4b0a-9273-ae46acda3937",
+        "url": "https://images.cdn.appfolio.com/maia/images/b1b0eb33-62af-4b0a-9273-ae46acda3937/large.png",
+        "alt": "Maia Management"
+      }
+    ],
+    "amenities": [],
+    "petPolicy": "Cats allowed, Dogs allowed",
+    "applicationFee": 75,
+    "securityDeposit": 1395,
+    "utilitiesNote": "Utilities are included for an additional $30/mo.",
+    "applyUrl": "https://maia.appfolio.com/listings/rental_applications/new?listable_uid=f9d8475f-a60f-411a-aaf7-9d640b53d5a9&source=Website",
+    "lat": 25.765883,
+    "lng": -80.221344,
+    "syncedAt": "2026-03-04T18:35:47.481Z"
+  }
+]
