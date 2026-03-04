@@ -110,23 +110,23 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
     (moveIn !== "all" ? 1 : 0);
 
   const filterBar = (
-    <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:gap-3">
-      {/* Row 1 on mobile: search + count + view toggle */}
-      <div className="flex items-center gap-2 sm:min-w-0 sm:flex-1 sm:gap-3">
+    <div className="flex flex-col gap-2 md:flex-row md:items-center md:gap-3">
+      {/* Row 1: search + view toggle (+ inline filters on md+) */}
+      <div className="flex items-center gap-2 md:min-w-0 md:flex-1 md:gap-3">
         {/* Search input */}
-        <div className="relative min-w-0 flex-1 sm:flex-none">
+        <div className="relative min-w-0 flex-1 md:flex-none">
           <Search size={14} strokeWidth={1.5} className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-text pointer-events-none" />
           <input
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
             placeholder="Search..."
-            className="h-10 w-full border border-border-light bg-white pl-8 pr-3 text-[0.833rem] outline-none placeholder:text-gray-text/50 focus-visible:border-dark sm:w-36 md:w-44"
+            className="h-10 w-full border border-border-light bg-white pl-8 pr-3 text-[0.833rem] outline-none placeholder:text-gray-text/50 focus-visible:border-dark md:w-44"
           />
         </div>
 
-        {/* Desktop-only inline filters */}
-        <div className="hidden sm:flex sm:items-center sm:gap-2">
+        {/* Inline filters — md and up */}
+        <div className="hidden md:flex md:items-center md:gap-2">
           <select
             id={bedsId}
             value={beds}
@@ -196,7 +196,7 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
             aria-label="Map view"
           >
             <MapIcon size={14} strokeWidth={1.5} />
-            <span className="hidden sm:inline">Map</span>
+            <span className="hidden md:inline">Map</span>
           </button>
           <button
             onClick={() => setView("grid")}
@@ -208,13 +208,13 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
             aria-label="Grid view"
           >
             <LayoutGrid size={14} strokeWidth={1.5} />
-            <span className="hidden sm:inline">List</span>
+            <span className="hidden md:inline">List</span>
           </button>
         </div>
       </div>
 
-      {/* Row 2 on mobile: filter pills */}
-      <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide sm:hidden">
+      {/* Row 2: filter pills (below md) */}
+      <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide md:hidden">
         <select
           value={beds}
           onChange={(e) => setBeds(e.target.value)}
