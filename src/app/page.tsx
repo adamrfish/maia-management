@@ -139,7 +139,7 @@ export default function HomePage() {
                       href="/listings"
                       className="link-underline mt-4 inline-block pb-1 text-[0.833rem]"
                     >
-                      Learn more
+                      Browse apartments
                     </Link>
                   </div>
                   {/* Desktop: chair image */}
@@ -187,7 +187,7 @@ export default function HomePage() {
                       href="/management"
                       className="link-underline mt-4 inline-block pb-1 text-[0.833rem]"
                     >
-                      Learn more
+                      Our management services
                     </Link>
                   </div>
                 </div>

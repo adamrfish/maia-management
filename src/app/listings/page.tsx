@@ -47,9 +47,9 @@ export default function ListingsPage() {
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
                   Professionally managed
                 </div>
-                <h3 className="mt-3 text-[1.2rem] font-medium tracking-[0.025em]">
+                <h2 className="mt-3 text-[1.2rem] font-medium tracking-[0.025em]">
                   Move in with confidence
-                </h3>
+                </h2>
                 <p className="mt-3 text-[0.833rem] leading-[1.8] text-gray-text">
                   Every apartment is maintained by our in-house team. From the
                   moment you walk in, everything works — and if it doesn&apos;t, we&apos;re
@@ -63,9 +63,9 @@ export default function ListingsPage() {
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
                   Local expertise
                 </div>
-                <h3 className="mt-3 text-[1.2rem] font-medium tracking-[0.025em]">
+                <h2 className="mt-3 text-[1.2rem] font-medium tracking-[0.025em]">
                   We know these neighborhoods
-                </h3>
+                </h2>
                 <p className="mt-3 text-[0.833rem] leading-[1.8] text-gray-text">
                   South Beach, Mid-Beach, Brickell, Coral Gables — we manage
                   properties across Miami&apos;s best areas and can help you find
@@ -79,9 +79,9 @@ export default function ListingsPage() {
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
                   Seamless experience
                 </div>
-                <h3 className="mt-3 text-[1.2rem] font-medium tracking-[0.025em]">
+                <h2 className="mt-3 text-[1.2rem] font-medium tracking-[0.025em]">
                   Leasing made simple
-                </h3>
+                </h2>
                 <p className="mt-3 text-[0.833rem] leading-[1.8] text-gray-text">
                   Tour scheduling, applications, and lease signing — all handled
                   directly with our team. No runaround, no middlemen.

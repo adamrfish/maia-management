@@ -29,9 +29,9 @@ export function Footer() {
         <div className="mx-auto max-w-[75rem]">
           <div className="flex flex-col items-center gap-6 py-16 text-center md:flex-row md:justify-between md:py-20 md:text-left">
             <div>
-              <h3 className="text-[1.44rem] font-medium tracking-[0.05em]">
+              <h2 className="text-[1.44rem] font-medium tracking-[0.05em]">
                 Get listings
-              </h3>
+              </h2>
               <p className="mt-2 max-w-[32rem] text-[0.833rem] leading-[1.7] tracking-[0.05em] text-cream/90">
                 Join our mailing list to receive exclusive updates on the latest
                 property listings tailored just for you.
@@ -53,7 +53,7 @@ export function Footer() {
           <div className="grid grid-cols-1 gap-12 py-14 md:grid-cols-[1.2fr_1fr_1fr_1fr] md:py-20">
             {/* Logo + tagline */}
             <div>
-              <Link href="/" className="inline-block">
+              <Link href="/" className="inline-block" aria-label="MAIA Management home">
                 <div
                   className="tracking-[0.2em]"
                   style={{

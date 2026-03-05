@@ -130,9 +130,9 @@ export default function AboutPage() {
                           className="object-cover"
                         />
                       </div>
-                      <h3 className="text-[1rem] font-medium tracking-[0.05em]">
+                      <h2 className="text-[1rem] font-medium tracking-[0.05em]">
                         {member.name}
-                      </h3>
+                      </h2>
                       <p className="mt-4 text-[0.833rem] leading-[1.7] tracking-[0.05em] text-gray-text">
                         {member.bio}
                       </p>

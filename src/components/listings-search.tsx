@@ -214,7 +214,7 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
       </div>
 
       {/* Row 2: filter pills (below md) */}
-      <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide md:hidden">
+      <div className="flex items-center gap-3 overflow-x-auto scrollbar-hide md:hidden">
         <select
           value={beds}
           onChange={(e) => setBeds(e.target.value)}

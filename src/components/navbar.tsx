@@ -151,7 +151,7 @@ export function Navbar() {
                 </div>
 
                 {/* Center: Logo */}
-                <Link href="/" className="block text-center">
+                <Link href="/" className="block text-center" aria-label="MAIA Management home">
                   <div
                     className="tracking-[0.2em] text-[#1d1d1b] transition-[font-size] duration-500 ease-in-out"
                     style={{
@@ -218,7 +218,7 @@ export function Navbar() {
             >
               {/* Panel header */}
               <div className="flex items-center justify-between px-8 pt-8 pb-6">
-                <Link href="/" onClick={() => setMenuOpen(false)}>
+                <Link href="/" onClick={() => setMenuOpen(false)} aria-label="MAIA Management home">
                   <div
                     className="text-[1.6rem] tracking-[0.2em]"
                     style={{
