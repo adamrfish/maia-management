@@ -306,83 +306,87 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
 
   // --- Map view ---
   return (
-    <div>
-      {/* Filter bar — sticky */}
-      <div className="sticky top-[3.5rem] z-20 border-b border-border-light bg-cream-light px-5 py-3 md:px-10">
-        {filterBar}
-      </div>
+    <div className="px-5 md:px-10">
+      <div className="mx-auto max-w-[75rem]">
+        {/* Filter bar — sticky */}
+        <div className="sticky top-[3.5rem] z-20 -mx-5 border-b border-border-light bg-cream px-5 py-3 md:-mx-10 md:px-10">
+          <div className="mx-auto max-w-[75rem]">
+            {filterBar}
+          </div>
+        </div>
 
-      {/* Desktop: split pane (sidebar + map) */}
-      {/* Mobile: map on top, cards below */}
-      <div className="flex flex-col lg:h-[calc(100dvh-6.5rem)] lg:flex-row">
-        {/* Desktop sidebar — hidden on mobile */}
-        <div
-          ref={sidebarRef}
-          className="hidden shrink-0 overflow-y-auto border-r border-border-light bg-cream-light lg:block lg:w-[24rem] xl:w-[28rem]"
-        >
-          <div className="px-5 pt-4 pb-2 text-[0.694rem] tracking-[0.05em] text-gray-text">
-            {filtered.length}{" "}
-            {filtered.length === 1 ? "apartment" : "apartments"} available
+        {/* Desktop: split pane (sidebar + map) */}
+        {/* Mobile: map on top, cards below */}
+        <div className="flex flex-col lg:h-[calc(100dvh-6.5rem)] lg:flex-row">
+          {/* Desktop sidebar — hidden on mobile */}
+          <div
+            ref={sidebarRef}
+            className="hidden shrink-0 overflow-y-auto border-r border-border-light bg-cream-light lg:block lg:w-[24rem] xl:w-[28rem]"
+          >
+            <div className="px-5 pt-4 pb-2 text-[0.694rem] tracking-[0.05em] text-gray-text">
+              {filtered.length}{" "}
+              {filtered.length === 1 ? "apartment" : "apartments"} available
+            </div>
+
+            {filtered.length === 0 ? (
+              <div className="px-5 py-12 text-center">
+                <p className="text-[0.833rem] text-gray-text">
+                  No listings match your filters.
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-col">
+                {filtered.map((listing) => (
+                  <div
+                    key={listing.id}
+                    ref={(el) => {
+                      if (el) cardRefs.current.set(listing.id, el);
+                      else cardRefs.current.delete(listing.id);
+                    }}
+                    className={`border-b border-border-light px-5 py-4 transition-colors duration-150 ${
+                      hoveredListingId === listing.id ? "bg-cream-mid" : ""
+                    }`}
+                    onMouseEnter={() => setHoveredListingId(listing.id)}
+                    onMouseLeave={() => setHoveredListingId(null)}
+                  >
+                    <ListingCard listing={listing} compact />
+                  </div>
+                ))}
+              </div>
+            )}
           </div>
 
-          {filtered.length === 0 ? (
-            <div className="px-5 py-12 text-center">
-              <p className="text-[0.833rem] text-gray-text">
-                No listings match your filters.
-              </p>
-            </div>
-          ) : (
-            <div className="flex flex-col">
-              {filtered.map((listing) => (
-                <div
-                  key={listing.id}
-                  ref={(el) => {
-                    if (el) cardRefs.current.set(listing.id, el);
-                    else cardRefs.current.delete(listing.id);
-                  }}
-                  className={`border-b border-border-light px-5 py-4 transition-colors duration-150 ${
-                    hoveredListingId === listing.id ? "bg-cream-mid" : ""
-                  }`}
-                  onMouseEnter={() => setHoveredListingId(listing.id)}
-                  onMouseLeave={() => setHoveredListingId(null)}
-                >
-                  <ListingCard listing={listing} compact />
-                </div>
-              ))}
-            </div>
-          )}
-        </div>
+          {/* Map */}
+          <div className="h-[45dvh] shrink-0 lg:h-auto lg:min-h-0 lg:flex-1">
+            <ListingsMap
+              listings={filtered}
+              hoveredListingId={hoveredListingId}
+              onMarkerHover={handleMarkerHover}
+              className="h-full w-full"
+            />
+          </div>
 
-        {/* Map */}
-        <div className="h-[45dvh] shrink-0 lg:h-auto lg:min-h-0 lg:flex-1">
-          <ListingsMap
-            listings={filtered}
-            hoveredListingId={hoveredListingId}
-            onMarkerHover={handleMarkerHover}
-            className="h-full w-full"
-          />
-        </div>
-
-        {/* Mobile: listing cards below the map */}
-        <div className="lg:hidden">
-          {filtered.length === 0 ? (
-            <div className="py-12 text-center">
-              <p className="text-[0.833rem] text-gray-text">
-                No listings match your filters.
-              </p>
-            </div>
-          ) : (
-            <div className="flex flex-col">
-              {filtered.map((listing) => (
-                <div
-                  key={listing.id}
-                  className="border-b border-border-light px-5 py-4"
-                >
-                  <ListingCard listing={listing} compact />
-                </div>
-              ))}
-            </div>
-          )}
+          {/* Mobile: listing cards below the map */}
+          <div className="lg:hidden">
+            {filtered.length === 0 ? (
+              <div className="py-12 text-center">
+                <p className="text-[0.833rem] text-gray-text">
+                  No listings match your filters.
+                </p>
+              </div>
+            ) : (
+              <div className="flex flex-col">
+                {filtered.map((listing) => (
+                  <div
+                    key={listing.id}
+                    className="border-b border-border-light px-5 py-4"
+                  >
+                    <ListingCard listing={listing} compact />
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
         </div>
       </div>
     </div>
