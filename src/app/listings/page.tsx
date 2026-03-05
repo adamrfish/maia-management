@@ -22,8 +22,6 @@ export default function ListingsPage() {
             <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Apartments" }]} />
           </div>
         </div>
-      </section>
-      <section className="bg-cream">
         <Suspense
           fallback={
             <div className="flex h-[60vh] items-center justify-center">
@@ -36,9 +34,10 @@ export default function ListingsPage() {
       </section>
 
       {/* Living experience section */}
-      <section className="border-t border-border-light bg-cream">
+      <section className="bg-cream">
         <div className="px-5 md:px-10">
           <div className="mx-auto max-w-[75rem]">
+            <div className="border-t border-dark/10" />
             <div className="grid grid-cols-1 gap-10 py-16 md:grid-cols-3 md:py-24">
               <div>
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
