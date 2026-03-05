@@ -11,6 +11,7 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://maiamgmt.com"),
   title: {
     default: "MAIA Management",
     template: "%s | MAIA Management",
