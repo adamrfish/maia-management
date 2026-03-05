@@ -1,63 +1,37 @@
-"use client";
-
 import Link from "next/link";
-import { motion } from "motion/react";
-
-const ease: [number, number, number, number] = [0.25, 0.1, 0.25, 1];
-
-const stagger = {
-  hidden: {},
-  visible: {
-    transition: { staggerChildren: 0.15, delayChildren: 0.2 },
-  },
-};
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 20 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.7, ease },
-  },
-};
 
 export function HeroContent() {
   return (
-    <motion.div
-      className="relative z-10 mx-auto max-w-[42rem] text-center"
-      initial="hidden"
-      animate="visible"
-      variants={stagger}
-    >
+    <div className="relative z-10 mx-auto max-w-[42rem] text-center">
       {/* Kicker */}
-      <motion.p
-        className="text-[0.694rem] uppercase tracking-[0.125em]"
-        variants={fadeUp}
+      <p
+        className="text-[0.694rem] uppercase tracking-[0.125em] animate-fade-up opacity-0"
+        style={{ animationDelay: "0.2s" }}
       >
         Unlock the door to
-      </motion.p>
+      </p>
 
       {/* Headline */}
-      <motion.h1
-        className="mt-5 mb-6 text-[2.074rem] font-medium leading-tight tracking-[0.025em] md:text-[2.986rem]"
-        variants={fadeUp}
+      <h1
+        className="mt-5 mb-6 text-[2.074rem] font-medium leading-tight tracking-[0.025em] md:text-[2.986rem] animate-fade-up opacity-0"
+        style={{ animationDelay: "0.35s" }}
       >
         Miami&rsquo;s vibrant lifestyle
-      </motion.h1>
+      </h1>
 
       {/* Body */}
-      <motion.p
-        className="mx-auto max-w-[32rem] text-[1rem] leading-[1.7] tracking-[0.025em] text-gray-text"
-        variants={fadeUp}
+      <p
+        className="mx-auto max-w-[32rem] text-[1rem] leading-[1.7] tracking-[0.025em] text-gray-text animate-fade-up opacity-0"
+        style={{ animationDelay: "0.5s" }}
       >
         Find your next apartment or let us manage your property. Maia brings
         personalized service to Miami&apos;s best neighborhoods.
-      </motion.p>
+      </p>
 
       {/* CTAs */}
-      <motion.div
-        className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-6"
-        variants={fadeUp}
+      <div
+        className="mt-8 flex flex-col items-center gap-3 sm:mt-10 sm:flex-row sm:justify-center sm:gap-6 animate-fade-up opacity-0"
+        style={{ animationDelay: "0.65s" }}
       >
         <Link
           href="/listings"
@@ -71,7 +45,7 @@ export function HeroContent() {
         >
           Manage property
         </Link>
-      </motion.div>
-    </motion.div>
+      </div>
+    </div>
   );
 }
