@@ -176,9 +176,10 @@ export default function AboutPage() {
       </section>
 
       {/* Consulting Services */}
-      <section className="bg-cream-light">
+      <section className="bg-cream">
         <div className="px-5 md:px-10">
           <div className="mx-auto max-w-[75rem]">
+            <div className="mx-auto max-w-[60rem] border-t border-dark/10" />
             <div className="py-24 md:py-32">
               <FadeIn>
                 <div className="mx-auto max-w-[48rem] text-center">

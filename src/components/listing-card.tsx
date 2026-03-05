@@ -52,7 +52,7 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
                 alt={i === 0 ? listing.streetAddress : ""}
                 fill
                 sizes={compact ? "(max-width: 1024px) 100vw, 28rem" : carousel ? "22rem" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
-                className="object-cover"
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           ))}
