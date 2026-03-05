@@ -15,14 +15,14 @@ export default function ListingsPage() {
 
   return (
     <>
-      <section className="bg-cream-light">
+      <section className="bg-cream">
         <div className="px-5 md:px-10">
           <div className="mx-auto max-w-[75rem]">
             <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "Apartments" }]} />
           </div>
         </div>
       </section>
-      <section className="bg-cream-light">
+      <section className="bg-cream">
         <Suspense
           fallback={
             <div className="flex h-[60vh] items-center justify-center">
