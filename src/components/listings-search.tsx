@@ -366,7 +366,7 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
             />
           </div>
 
-          {/* Mobile: listing cards below the map */}
+          {/* Mobile/tablet: listing cards below the map */}
           <div className="lg:hidden">
             {filtered.length === 0 ? (
               <div className="py-12 text-center">
@@ -375,12 +375,9 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
                 </p>
               </div>
             ) : (
-              <div className="flex flex-col">
+              <div className="grid grid-cols-1 gap-6 py-6 sm:grid-cols-2 md:grid-cols-3">
                 {filtered.map((listing) => (
-                  <div
-                    key={listing.id}
-                    className="border-b border-border-light px-5 py-4"
-                  >
+                  <div key={listing.id} className="max-w-[24rem]">
                     <ListingCard listing={listing} compact />
                   </div>
                 ))}
