@@ -2,6 +2,7 @@
 
 import { useRef } from "react";
 import dynamic from "next/dynamic";
+import { Home } from "lucide-react";
 import Map, { Marker, NavigationControl } from "react-map-gl/mapbox";
 import type { MapRef } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
@@ -35,12 +36,12 @@ function ListingLocationMapInner({ lat, lng, address }: ListingLocationMapProps)
         scrollZoom={false}
       >
         <NavigationControl position="bottom-right" showCompass={false} />
-        <Marker latitude={lat} longitude={lng} anchor="center">
-          <div className="relative flex items-center justify-center" title={address}>
-            {/* Pulse ring */}
-            <span className="absolute h-10 w-10 animate-ping rounded-full bg-dark/20" />
-            {/* Marker dot */}
-            <span className="relative h-4 w-4 rounded-full border-2 border-white bg-dark shadow-lg" />
+        <Marker latitude={lat} longitude={lng} anchor="bottom">
+          <div className="flex flex-col items-center" title={address}>
+            <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-white bg-dark shadow-lg">
+              <Home size={16} strokeWidth={1.5} className="text-cream" />
+            </div>
+            <div className="h-2 w-2 -mt-1 rotate-45 border-r-2 border-b-2 border-white bg-dark" />
           </div>
         </Marker>
       </Map>
