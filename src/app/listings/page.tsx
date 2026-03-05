@@ -1,6 +1,7 @@
 import { Suspense } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
+import { ShieldCheck, MapPin, FileCheck } from "lucide-react";
 import { getAllListings } from "@/lib/listings";
 import { ListingsSearch } from "@/components/listings-search";
 import { Breadcrumb } from "@/components/breadcrumb";
@@ -40,6 +41,9 @@ export default function ListingsPage() {
             <div className="border-t border-dark/10" />
             <div className="grid grid-cols-1 gap-10 py-16 md:grid-cols-3 md:py-24">
               <div>
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-dark/10 bg-white">
+                  <ShieldCheck size={20} strokeWidth={1.5} className="text-gray-text" />
+                </div>
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
                   Professionally managed
                 </div>
@@ -53,6 +57,9 @@ export default function ListingsPage() {
                 </p>
               </div>
               <div>
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-dark/10 bg-white">
+                  <MapPin size={20} strokeWidth={1.5} className="text-gray-text" />
+                </div>
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
                   Local expertise
                 </div>
@@ -66,6 +73,9 @@ export default function ListingsPage() {
                 </p>
               </div>
               <div>
+                <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-full border border-dark/10 bg-white">
+                  <FileCheck size={20} strokeWidth={1.5} className="text-gray-text" />
+                </div>
                 <div className="text-[0.694rem] font-medium uppercase tracking-[0.15em] text-gray-text">
                   Seamless experience
                 </div>
