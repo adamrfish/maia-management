@@ -10,6 +10,7 @@ export const metadata: Metadata = {
   title: "Available Apartments",
   description:
     "Browse available rental apartments in Miami Beach and Miami managed by Maia Management.",
+  alternates: { canonical: "https://maiamgmt.com/listings" },
 };
 
 export default function ListingsPage() {

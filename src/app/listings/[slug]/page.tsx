@@ -28,9 +28,29 @@ export async function generateMetadata({
   const listing = getListingBySlug(slug);
   if (!listing) return {};
 
+  const description = `${listing.rentFormatted}/mo — ${listing.beds === 0 ? "Studio" : `${listing.beds} bed`}, ${listing.baths} bath, ${listing.sqft} sqft apartment in ${listing.city}.`;
+  const ogImage = listing.images[0]?.url;
+
   return {
     title: listing.streetAddress,
-    description: `${listing.rentFormatted}/mo — ${listing.beds === 0 ? "Studio" : `${listing.beds} bed`}, ${listing.baths} bath, ${listing.sqft} sqft apartment in ${listing.city}.`,
+    description,
+    alternates: {
+      canonical: `https://maiamgmt.com/listings/${listing.slug}`,
+    },
+    openGraph: {
+      title: `${listing.streetAddress} — ${listing.rentFormatted}/mo`,
+      description,
+      url: `https://maiamgmt.com/listings/${listing.slug}`,
+      ...(ogImage && {
+        images: [{ url: ogImage, width: 1200, height: 630, alt: listing.streetAddress }],
+      }),
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${listing.streetAddress} — ${listing.rentFormatted}/mo`,
+      description,
+      ...(ogImage && { images: [ogImage] }),
+    },
   };
 }
 
@@ -42,8 +62,51 @@ export default async function ListingDetailPage({ params }: PageProps) {
   const relatedListings = getRelatedListings(slug, 2);
   const isAvailableNow = listing.availableDate === "now";
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Apartment",
+    name: listing.streetAddress,
+    description: listing.description,
+    url: `https://maiamgmt.com/listings/${listing.slug}`,
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: listing.streetAddress,
+      addressLocality: listing.city,
+      addressRegion: listing.state,
+      postalCode: listing.zip,
+      addressCountry: "US",
+    },
+    ...(listing.lat != null && listing.lng != null && {
+      geo: {
+        "@type": "GeoCoordinates",
+        latitude: listing.lat,
+        longitude: listing.lng,
+      },
+    }),
+    numberOfBedrooms: listing.beds,
+    numberOfBathroomsTotal: listing.baths,
+    floorSize: {
+      "@type": "QuantitativeValue",
+      value: listing.sqft,
+      unitCode: "FTK",
+    },
+    ...(listing.images[0] && { image: listing.images[0].url }),
+    offers: {
+      "@type": "Offer",
+      price: listing.rent,
+      priceCurrency: "USD",
+      availability: isAvailableNow
+        ? "https://schema.org/InStock"
+        : "https://schema.org/PreOrder",
+    },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb */}
       <section className="bg-cream">
         <div className="px-5 md:px-10">
@@ -83,7 +146,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                 <div className="mb-8">
                   <div className="flex flex-wrap items-start justify-between gap-4">
                     <div>
-                      <h1 className="text-[1.728rem] font-medium tracking-[0.025em]">
+                      <h1 className="text-[1.44rem] font-medium tracking-[0.025em] sm:text-[1.728rem]">
                         {listing.streetAddress}
                       </h1>
                       <p className="mt-1 text-[0.833rem] tracking-[0.05em] text-gray-text">
@@ -94,7 +157,7 @@ export default async function ListingDetailPage({ params }: PageProps) {
                     <ListingShareSave />
                   </div>
                   <div className="mt-4 flex flex-wrap items-center gap-4">
-                    <span className="text-[2rem] font-semibold tracking-[0.025em]">
+                    <span className="text-[1.6rem] font-semibold tracking-[0.025em] sm:text-[2rem]">
                       {listing.rentFormatted}
                       <span className="text-[0.833rem] font-normal text-gray-text">
                         /mo

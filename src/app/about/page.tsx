@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "About",
   description:
     "Meet the Maia Management team. Personalized property management across Miami's best neighborhoods.",
+  alternates: { canonical: "https://maiamgmt.com/about" },
 };
 
 const consultingServices = [

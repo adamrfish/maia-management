@@ -6,6 +6,15 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 
 type ActionResult = { success: true } | { success: false; error: string };
 
+function escapeHtml(str: string): string {
+  return str
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#039;");
+}
+
 export async function submitContactForm(
   formData: FormData
 ): Promise<ActionResult> {
@@ -25,14 +34,14 @@ export async function submitContactForm(
       from: "Maia Website <onboarding@resend.dev>",
       to: "info@maiamgmt.com",
       replyTo: email,
-      subject: `Contact Form — ${reason}`,
+      subject: `Contact Form — ${escapeHtml(reason)}`,
       html: `
         <table cellpadding="8" cellspacing="0" style="font-family:sans-serif;font-size:14px;border-collapse:collapse">
-          <tr><td style="font-weight:600;color:#555">Name</td><td>${firstName} ${lastName}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Email</td><td>${email}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Phone</td><td>${phone || "—"}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Reason</td><td>${reason}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Message</td><td>${message}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Name</td><td>${escapeHtml(firstName)} ${escapeHtml(lastName)}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Email</td><td>${escapeHtml(email)}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Phone</td><td>${escapeHtml(phone || "—")}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Reason</td><td>${escapeHtml(reason)}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Message</td><td>${escapeHtml(message)}</td></tr>
         </table>
       `,
     });
@@ -66,16 +75,16 @@ export async function submitInquiryForm(
       from: "Maia Website <onboarding@resend.dev>",
       to: "info@maiamgmt.com",
       replyTo: email,
-      subject: `Management Inquiry — ${propertyAddress || "New Property"}`,
+      subject: `Management Inquiry — ${escapeHtml(propertyAddress || "New Property")}`,
       html: `
         <table cellpadding="8" cellspacing="0" style="font-family:sans-serif;font-size:14px;border-collapse:collapse">
-          <tr><td style="font-weight:600;color:#555">Name</td><td>${firstName} ${lastName}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Email</td><td>${email}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Phone</td><td>${phone || "—"}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Property Address</td><td>${propertyAddress || "—"}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Property Type</td><td>${propertyType || "—"}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Number of Units</td><td>${numberOfUnits || "—"}</td></tr>
-          <tr><td style="font-weight:600;color:#555">Message</td><td>${message}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Name</td><td>${escapeHtml(firstName)} ${escapeHtml(lastName)}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Email</td><td>${escapeHtml(email)}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Phone</td><td>${escapeHtml(phone || "—")}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Property Address</td><td>${escapeHtml(propertyAddress || "—")}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Property Type</td><td>${escapeHtml(propertyType || "—")}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Number of Units</td><td>${escapeHtml(numberOfUnits || "—")}</td></tr>
+          <tr><td style="font-weight:600;color:#555">Message</td><td>${escapeHtml(message)}</td></tr>
         </table>
       `,
     });

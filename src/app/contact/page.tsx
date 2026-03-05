@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: "Contact",
   description:
     "Get in touch with Maia Management. Schedule a showing, ask about available apartments, or inquire about property management services in Miami.",
+  alternates: { canonical: "https://maiamgmt.com/contact" },
 };
 
 export default function ContactPage() {

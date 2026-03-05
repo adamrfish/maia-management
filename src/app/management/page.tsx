@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Property Management",
   description:
     "Comprehensive property management services in Miami. From leasing and maintenance to financial reporting, Maia handles everything for property owners.",
+  alternates: { canonical: "https://maiamgmt.com/management" },
 };
 
 const services = [
