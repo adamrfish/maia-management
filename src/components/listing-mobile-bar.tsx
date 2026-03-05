@@ -27,14 +27,24 @@ export function ListingMobileBar({ listing }: ListingMobileBarProps) {
             {bedsLabel} · {listing.baths} ba · {listing.sqft} sqft
           </div>
         </div>
-        <a
-          href={listing.applyUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="bg-dark px-6 py-3 text-[0.694rem] tracking-[0.075em] text-cream transition-colors duration-200 hover:bg-dark/90"
-        >
-          Apply Now
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={listing.applyUrl.replace("/rental_applications/new", "/contact_requests/new")}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-dark px-4 py-3 text-[0.694rem] tracking-[0.075em] text-dark transition-colors duration-200 hover:bg-dark hover:text-cream"
+          >
+            Tour
+          </a>
+          <a
+            href={listing.applyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-dark px-4 py-3 text-[0.694rem] tracking-[0.075em] text-cream transition-colors duration-200 hover:bg-dark/90"
+          >
+            Apply
+          </a>
+        </div>
       </div>
     </motion.div>
   );

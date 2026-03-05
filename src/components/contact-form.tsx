@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useTransition } from "react";
+import { useSearchParams } from "next/navigation";
 import { motion, AnimatePresence } from "@/components/ui/motion-primitives";
 import { Check } from "lucide-react";
 import { submitContactForm, submitInquiryForm } from "@/app/actions/contact";
@@ -29,9 +30,11 @@ const propertyTypes = [
 const unitOptions = ["1", "2–4", "5–10", "11–25", "26–50", "50+"];
 
 export function ContactForm({ variant = "contact" }: ContactFormProps) {
+  const searchParams = useSearchParams();
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [isPending, startTransition] = useTransition();
+  const defaultReason = variant === "contact" ? (searchParams.get("reason") ?? "") : "";
 
   const labelClass =
     "block text-[0.694rem] font-medium uppercase tracking-[0.1em] text-gray-text mb-2";
@@ -259,7 +262,7 @@ export function ContactForm({ variant = "contact" }: ContactFormProps) {
                   id="reason"
                   name="reason"
                   required
-                  defaultValue=""
+                  defaultValue={defaultReason}
                   className={selectClass}
                 >
                   <option value="" disabled>

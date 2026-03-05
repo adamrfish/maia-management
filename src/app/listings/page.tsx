@@ -81,7 +81,7 @@ export default function ListingsPage() {
             </div>
             <div className="flex justify-center border-t border-border-light py-12">
               <Link
-                href="/contact"
+                href="/contact?reason=Schedule+a+Showing"
                 className="border border-dark bg-dark px-8 py-3.5 text-[0.694rem] tracking-[0.075em] text-cream transition-colors duration-200 hover:bg-cream hover:text-dark"
               >
                 Schedule a tour

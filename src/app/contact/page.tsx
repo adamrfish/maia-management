@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import { ContactForm } from "@/components/contact-form";
 import { FadeIn } from "@/components/ui/motion-primitives";
@@ -75,7 +76,9 @@ export default function ContactPage() {
               {/* Right: form */}
               <div>
                 <FadeIn delay={0.1}>
-                  <ContactForm />
+                  <Suspense>
+                    <ContactForm />
+                  </Suspense>
                 </FadeIn>
               </div>
             </div>

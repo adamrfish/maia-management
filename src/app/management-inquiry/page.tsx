@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { ContactForm } from "@/components/contact-form";
@@ -64,7 +65,9 @@ export default function ManagementInquiryPage() {
           <div className="mx-auto max-w-[48rem]">
             <div className="py-24 md:py-32 pt-0">
               <FadeIn delay={0.2}>
-                <ContactForm variant="inquiry" />
+                <Suspense>
+                  <ContactForm variant="inquiry" />
+                </Suspense>
               </FadeIn>
             </div>
           </div>
