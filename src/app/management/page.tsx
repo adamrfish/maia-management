@@ -105,12 +105,12 @@ export default function ManagementPage() {
           <div className="mx-auto max-w-[75rem]">
             <div className="relative z-10 py-16 text-center md:py-24">
               <FadeIn>
-                <h1 className="font-montserrat text-[0.694rem] font-normal uppercase tracking-[0.125em] text-dark">
+                <p className="font-montserrat text-[0.694rem] font-normal uppercase tracking-[0.125em] text-dark">
                   Management
-                </h1>
-                <h2 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
+                </p>
+                <h1 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
                   Premium care for your property
-                </h2>
+                </h1>
                 <p className="mx-auto max-w-[48rem] font-montserrat text-[0.833rem] font-normal leading-[1.7] tracking-[0.05em] text-dark">
                   We provide premium care for your property, ensuring every detail
                   is meticulously managed and maintained. From routine maintenance
@@ -144,7 +144,7 @@ export default function ManagementPage() {
                     alt="Pool area at a Maia-managed property"
                     fill
                     sizes="(max-width: 768px) 50vw, 30rem"
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
                 <div className="relative aspect-[4/3] overflow-hidden">
@@ -153,7 +153,7 @@ export default function ManagementPage() {
                     alt="Maia-managed apartment building"
                     fill
                     sizes="(max-width: 768px) 50vw, 30rem"
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
               </div>
@@ -223,9 +223,9 @@ export default function ManagementPage() {
                   <p className="text-[0.694rem] uppercase tracking-[0.125em] text-gray-text">
                     Our promise
                   </p>
-                  <h3 className="mt-4 text-[1.44rem] font-medium tracking-[0.025em]">
+                  <h2 className="mt-4 text-[1.44rem] font-medium tracking-[0.025em]">
                     Your property, our priority
-                  </h3>
+                  </h2>
                   <p className="mt-4 text-[0.833rem] leading-[1.8] tracking-[0.05em] text-gray-text">
                     We treat every property as if it were our own. That means
                     proactive maintenance, transparent reporting, and a team
@@ -245,7 +245,7 @@ export default function ManagementPage() {
                     alt="Property consultation"
                     fill
                     sizes="(max-width: 768px) 100vw, 36rem"
-                    className="object-cover"
+                    className="object-cover object-center"
                   />
                 </div>
               </div>

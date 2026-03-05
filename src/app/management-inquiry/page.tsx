@@ -46,9 +46,9 @@ export default function ManagementInquiryPage() {
                 <p className="font-montserrat text-[0.694rem] font-normal uppercase tracking-[0.125em] text-dark">
                   Management Inquiry
                 </p>
-                <h2 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
+                <h1 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
                   Tell us about your property
-                </h2>
+                </h1>
                 <p className="mx-auto max-w-[48rem] font-montserrat text-[0.833rem] font-normal leading-[1.7] tracking-[0.05em] text-dark">
                   Fill out the form below and our team will reach out to discuss
                   how we can help manage your property.
@@ -65,7 +65,27 @@ export default function ManagementInquiryPage() {
           <div className="mx-auto max-w-[48rem]">
             <div className="py-24 md:py-32 pt-0">
               <FadeIn delay={0.2}>
-                <Suspense>
+                <Suspense
+                  fallback={
+                    <div className="border border-dark/10 bg-white p-6 sm:p-8 md:p-10">
+                      <div className="h-3 w-24 animate-pulse bg-cream-mid" />
+                      <div className="mb-6 mt-2 border-t border-dark/10" />
+                      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
+                        <div className="h-12 animate-pulse bg-cream-mid" />
+                        <div className="h-12 animate-pulse bg-cream-mid" />
+                      </div>
+                      <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
+                        <div className="h-12 animate-pulse bg-cream-mid" />
+                        <div className="h-12 animate-pulse bg-cream-mid" />
+                      </div>
+                      <div className="mt-10 h-3 w-24 animate-pulse bg-cream-mid" />
+                      <div className="mb-6 mt-2 border-t border-dark/10" />
+                      <div className="h-12 animate-pulse bg-cream-mid" />
+                      <div className="mt-5 h-32 animate-pulse bg-cream-mid" />
+                      <div className="mt-8 h-12 animate-pulse bg-dark/10" />
+                    </div>
+                  }
+                >
                   <ContactForm variant="inquiry" />
                 </Suspense>
               </FadeIn>

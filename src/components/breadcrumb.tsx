@@ -11,7 +11,7 @@ interface BreadcrumbProps {
 
 export function Breadcrumb({ items }: BreadcrumbProps) {
   return (
-    <nav className="pt-6 pb-4 text-[0.694rem] tracking-[0.05em] text-gray-text">
+    <nav aria-label="Breadcrumb" className="pt-6 pb-4 text-[0.694rem] tracking-[0.05em] text-gray-text">
       {items.map((item, i) => (
         <span key={i}>
           {i > 0 && <span className="mx-2">/</span>}

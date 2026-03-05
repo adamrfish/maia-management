@@ -31,9 +31,9 @@ export default function ShowcasePage() {
             <p className="font-montserrat text-[0.694rem] font-normal uppercase tracking-[0.125em] text-dark">
               Showcase
             </p>
-            <h2 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
+            <h1 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
               Our Properties
-            </h2>
+            </h1>
             <p className="mx-auto max-w-[48rem] font-montserrat text-[0.833rem] font-normal leading-[1.7] tracking-[0.05em] text-gray-text">
               Coming soon — check back for our full property showcase.
             </p>
