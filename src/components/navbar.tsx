@@ -367,8 +367,8 @@ export function Navbar() {
                       <Image
                         src="/social/ig.png"
                         alt="Instagram"
-                        width={18}
-                        height={18}
+                        width={24}
+                        height={24}
                       />
                     </a>
                   </div>
