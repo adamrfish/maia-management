@@ -118,7 +118,7 @@ export default function HomePage() {
 
               {/* Top grid: chair image + apartments card */}
               <FadeIn delay={0.1}>
-                <div className="mt-12 grid grid-cols-1 gap-24 md:grid-cols-[1fr_1.5fr]">
+                <div className="mt-12 grid grid-cols-1 gap-12 md:gap-24 md:grid-cols-[1fr_1.5fr]">
                   {/* Find Apartments */}
                   <div className="flex flex-col items-center justify-center text-center">
                     <Image
@@ -157,7 +157,7 @@ export default function HomePage() {
 
               {/* Bottom grid: coffee image + manage property */}
               <FadeIn delay={0.1}>
-                <div className="mt-20 grid grid-cols-1 gap-32 pl-0 pr-0 md:grid-cols-[1.5fr_1fr] md:pl-12 md:pr-4">
+                <div className="mt-16 grid grid-cols-1 gap-12 md:mt-20 md:gap-32 md:grid-cols-[1.5fr_1fr] md:pl-12 md:pr-4">
                   <div>
                     <Image
                       src="/coffee.webp"

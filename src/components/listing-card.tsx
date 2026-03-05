@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Listing } from "@/types/listing";
@@ -17,6 +17,7 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
   const images = listing.images.slice(0, MAX_IMAGES);
   const [current, setCurrent] = useState(0);
   const bedsLabel = listing.beds === 0 ? "Studio" : `${listing.beds} bd`;
+  const touchStart = useRef<number | null>(null);
 
   const prev = useCallback(
     (e: React.MouseEvent) => {
@@ -36,8 +37,33 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
     [images.length]
   );
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStart.current === null) return;
+      const delta = e.changedTouches[0].clientX - touchStart.current;
+      if (Math.abs(delta) > 30) {
+        e.preventDefault();
+        setCurrent((i) =>
+          delta < 0
+            ? (i + 1) % images.length
+            : (i - 1 + images.length) % images.length
+        );
+      }
+      touchStart.current = null;
+    },
+    [images.length]
+  );
+
   const imageCarousel = (
-    <div className="relative h-full w-full overflow-hidden">
+    <div
+      className="relative h-full w-full overflow-hidden"
+      onTouchStart={images.length > 1 ? handleTouchStart : undefined}
+      onTouchEnd={images.length > 1 ? handleTouchEnd : undefined}
+    >
       {images.length > 0 ? (
         <>
           {images.map((img, i) => (
@@ -60,7 +86,7 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
             <>
               <button
                 onClick={prev}
-                className="absolute left-2 top-1/2 z-10 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark opacity-0 shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 group-hover:opacity-100"
+                className="absolute left-2 top-1/2 z-10 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 opacity-70 md:opacity-0 md:group-hover:opacity-100"
                 aria-label="Previous image"
               >
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -69,7 +95,7 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
               </button>
               <button
                 onClick={next}
-                className="absolute right-2 top-1/2 z-10 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark opacity-0 shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 group-hover:opacity-100"
+                className="absolute right-2 top-1/2 z-10 flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 opacity-70 md:opacity-0 md:group-hover:opacity-100"
                 aria-label="Next image"
               >
                 <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -133,7 +159,7 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
     <Link
       href={`/listings/${listing.slug}`}
       className={`group flex flex-col transition-transform duration-500 hover:-translate-y-1 ${
-        carousel ? "w-[22rem] flex-shrink-0" : "w-full"
+        carousel ? "w-[85vw] flex-shrink-0 sm:w-[22rem]" : "w-full"
       }`}
     >
       <div className="relative aspect-[16/10] overflow-hidden">

@@ -8,7 +8,7 @@ interface ServiceCardProps {
 
 export function ServiceCard({ icon, title, description }: ServiceCardProps) {
   return (
-    <div className="bg-white border-[0.5px] border-dark p-12">
+    <div className="bg-white border-[0.5px] border-dark p-6 sm:p-8 md:p-12">
       <div className="mb-6">
         <Image src={icon} alt={title} width={40} height={40} />
       </div>

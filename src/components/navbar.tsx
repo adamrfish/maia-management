@@ -156,22 +156,24 @@ export function Navbar() {
                     className="tracking-[0.2em] text-[#1d1d1b] transition-[font-size] duration-500 ease-in-out"
                     style={{
                       fontFamily: "Logam, sans-serif",
-                      fontSize: scrolled ? "2.3rem" : "1.8rem",
+                      fontSize: scrolled ? "1.8rem" : "1.5rem",
                       lineHeight: 1,
                       fontWeight: 400,
                     }}
                   >
-                    MAIA
+                    <span className="md:hidden">MAIA</span>
+                    <span className="hidden md:inline" style={{ fontSize: scrolled ? "2.3rem" : "1.8rem" }}>MAIA</span>
                   </div>
                   <div
                     className="-mt-1 text-center uppercase tracking-[0.075em] text-[#1d1d1b] transition-[font-size] duration-500 ease-in-out"
                     style={{
-                      fontSize: scrolled ? "0.5rem" : "0.38rem",
+                      fontSize: scrolled ? "0.42rem" : "0.34rem",
                       fontWeight: 400,
                       lineHeight: 1,
                     }}
                   >
-                    Management
+                    <span className="md:hidden">Management</span>
+                    <span className="hidden md:inline" style={{ fontSize: scrolled ? "0.5rem" : "0.38rem" }}>Management</span>
                   </div>
                 </Link>
 

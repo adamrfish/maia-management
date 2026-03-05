@@ -20,7 +20,7 @@ function ListingLocationMapInner({ lat, lng, address }: ListingLocationMapProps)
   const mapRef = useRef<MapRef>(null);
 
   return (
-    <div className="h-[24rem] overflow-hidden rounded-sm border border-border-light">
+    <div className="h-[18rem] overflow-hidden rounded-sm border border-border-light md:h-[24rem]">
       <Map
         ref={mapRef}
         mapboxAccessToken={MAPBOX_TOKEN}
@@ -54,7 +54,7 @@ export const ListingLocationMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[24rem] items-center justify-center rounded-sm border border-border-light bg-cream-mid">
+      <div className="flex h-[18rem] items-center justify-center rounded-sm border border-border-light bg-cream-mid md:h-[24rem]">
         <span className="text-[0.833rem] text-gray-text">Loading map...</span>
       </div>
     ),

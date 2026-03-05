@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Showcase",
   description:
     "Browse our portfolio of beautifully managed properties across Miami Beach and Miami.",
+  alternates: { canonical: "https://maiamgmt.com/showcase" },
 };
 
 export default function ShowcasePage() {
@@ -15,19 +16,19 @@ export default function ShowcasePage() {
         alt=""
         width={1218}
         height={800}
-        className="pointer-events-none absolute left-0 top-0 z-0 h-[16rem] w-auto"
+        className="pointer-events-none absolute left-0 top-0 z-0 h-[10rem] w-auto md:h-[16rem]"
       />
       <Image
         src="/palm-right.webp"
         alt=""
         width={837}
         height={600}
-        className="pointer-events-none absolute right-0 top-0 z-0 h-[25rem] w-auto"
+        className="pointer-events-none absolute right-0 top-0 z-0 h-[15rem] w-auto md:h-[25rem]"
       />
 
       <div className="px-5 md:px-10">
         <div className="mx-auto max-w-[75rem]">
-          <div className="relative z-10 py-52 text-center">
+          <div className="relative z-10 py-28 text-center md:py-52">
             <p className="font-montserrat text-[0.694rem] font-normal uppercase tracking-[0.125em] text-dark">
               Showcase
             </p>

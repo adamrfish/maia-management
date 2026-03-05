@@ -24,7 +24,7 @@ export function PropertyCard({
       href={zillowUrl}
       target="_blank"
       rel="noopener noreferrer"
-      className="group flex w-[22rem] flex-shrink-0 flex-col transition-transform duration-500 hover:-translate-y-1"
+      className="group flex w-[85vw] flex-shrink-0 flex-col transition-transform duration-500 hover:-translate-y-1 sm:w-[22rem]"
     >
       {/* Image */}
       <div className="relative h-64 overflow-hidden">

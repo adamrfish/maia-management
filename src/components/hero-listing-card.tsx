@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { Listing } from "@/types/listing";
@@ -18,6 +18,7 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
   const images = listing.images.slice(0, MAX_IMAGES);
   const [current, setCurrent] = useState(0);
   const bedsLabel = listing.beds === 0 ? "Studio" : `${listing.beds} bd`;
+  const touchStart = useRef<number | null>(null);
 
   const prev = useCallback(
     (e: React.MouseEvent) => {
@@ -37,13 +38,38 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
     [images.length]
   );
 
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStart.current === null) return;
+      const delta = e.changedTouches[0].clientX - touchStart.current;
+      if (Math.abs(delta) > 30) {
+        e.preventDefault();
+        setCurrent((i) =>
+          delta < 0
+            ? (i + 1) % images.length
+            : (i - 1 + images.length) % images.length
+        );
+      }
+      touchStart.current = null;
+    },
+    [images.length]
+  );
+
   return (
     <Link
       href={`/listings/${listing.slug}`}
       className="group flex h-full overflow-hidden border border-border-light bg-white transition-colors duration-200 hover:border-dark/30"
     >
       {/* Image carousel — 1/3 width, aspect ratio for intrinsic height */}
-      <div className="relative aspect-[4/3] w-1/3 flex-shrink-0 overflow-hidden">
+      <div
+        className="relative aspect-[4/3] w-1/3 flex-shrink-0 overflow-hidden"
+        onTouchStart={images.length > 1 ? handleTouchStart : undefined}
+        onTouchEnd={images.length > 1 ? handleTouchEnd : undefined}
+      >
         {images.length > 0 ? (
           <>
             {images.map((img, i) => (
@@ -63,12 +89,12 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
               </div>
             ))}
 
-            {/* Nav arrows — visible on hover */}
+            {/* Nav arrows — always visible on touch, hover on desktop */}
             {images.length > 1 && (
               <>
                 <button
                   onClick={prev}
-                  className="absolute left-1.5 top-1/2 z-10 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark opacity-0 shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 group-hover:opacity-100"
+                  className="absolute left-1.5 top-1/2 z-10 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 opacity-70 md:opacity-0 md:group-hover:opacity-100"
                   aria-label="Previous image"
                 >
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -77,7 +103,7 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
                 </button>
                 <button
                   onClick={next}
-                  className="absolute right-1.5 top-1/2 z-10 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark opacity-0 shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 group-hover:opacity-100"
+                  className="absolute right-1.5 top-1/2 z-10 flex h-6 w-6 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-dark shadow-sm transition-all duration-200 hover:bg-white hover:scale-110 opacity-70 md:opacity-0 md:group-hover:opacity-100"
                   aria-label="Next image"
                 >
                   <svg width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -109,29 +135,29 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
       </div>
 
       {/* Details — typed out after card fades in */}
-      <div className="flex flex-col justify-center px-4 py-3">
-        <div className="text-[1rem] font-medium tracking-[0.025em]">
+      <div className="flex min-w-0 flex-col justify-center px-3 py-2.5 sm:px-4 sm:py-3">
+        <div className="truncate text-[0.9rem] font-medium tracking-[0.025em] sm:text-[1rem]">
           <TypeOut
             text={`${listing.rentFormatted}/mo`}
             delay={typeDelay}
             speed={35}
           />
         </div>
-        <div className="mt-1.5 text-[0.694rem] tracking-[0.05em] text-gray-text">
+        <div className="mt-1 truncate text-[0.64rem] tracking-[0.05em] text-gray-text sm:mt-1.5 sm:text-[0.694rem]">
           <TypeOut
             text={`${bedsLabel} · ${listing.baths} ba · ${listing.sqft} sqft`}
             delay={typeDelay + 0.4}
             speed={25}
           />
         </div>
-        <div className="mt-1.5 text-[0.694rem] tracking-[0.05em]">
+        <div className="mt-1 truncate text-[0.64rem] tracking-[0.05em] sm:mt-1.5 sm:text-[0.694rem]">
           <TypeOut
             text={listing.streetAddress}
             delay={typeDelay + 0.8}
             speed={25}
           />
         </div>
-        <div className="mt-1.5 text-[0.579rem] font-medium uppercase tracking-[0.1em] text-gray-text">
+        <div className="mt-1 text-[0.54rem] font-medium uppercase tracking-[0.1em] text-gray-text sm:mt-1.5 sm:text-[0.579rem]">
           <TypeOut
             text={
               listing.availableDate === "now"

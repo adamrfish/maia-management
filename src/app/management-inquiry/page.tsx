@@ -9,6 +9,7 @@ export const metadata: Metadata = {
   title: "Management Inquiry",
   description:
     "Interested in professional property management for your Miami property? Submit an inquiry and our team will be in touch.",
+  alternates: { canonical: "https://maiamgmt.com/management-inquiry" },
 };
 
 export default function ManagementInquiryPage() {
@@ -63,7 +64,7 @@ export default function ManagementInquiryPage() {
       <section className="bg-white">
         <div className="px-5 md:px-10">
           <div className="mx-auto max-w-[48rem]">
-            <div className="py-24 md:py-32 pt-0">
+            <div className="pb-24 pt-12 md:pb-32 md:pt-16">
               <FadeIn delay={0.2}>
                 <Suspense
                   fallback={

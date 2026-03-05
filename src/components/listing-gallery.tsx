@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import type { ListingImage } from "@/types/listing";
 import { AnimatePresence, motion } from "@/components/ui/motion-primitives";
@@ -14,6 +14,7 @@ interface ListingGalleryProps {
 export function ListingGallery({ images, address }: ListingGalleryProps) {
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [lightboxIndex, setLightboxIndex] = useState(0);
+  const touchStart = useRef<number | null>(null);
 
   const openLightbox = useCallback((index: number) => {
     setLightboxIndex(index);
@@ -31,6 +32,23 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
   const goPrev = useCallback(() => {
     setLightboxIndex((i) => (i - 1 + images.length) % images.length);
   }, [images.length]);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX;
+  }, []);
+
+  const handleTouchEnd = useCallback(
+    (e: React.TouchEvent) => {
+      if (touchStart.current === null) return;
+      const delta = e.changedTouches[0].clientX - touchStart.current;
+      if (Math.abs(delta) > 50) {
+        if (delta < 0) goNext();
+        else goPrev();
+      }
+      touchStart.current = null;
+    },
+    [goNext, goPrev]
+  );
 
   // Keyboard nav + scroll lock
   useEffect(() => {
@@ -138,13 +156,13 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
           >
             <button
               onClick={closeLightbox}
-              className="absolute right-6 top-6 z-10 text-cream/70 transition-colors duration-200 hover:text-cream"
+              className="absolute right-4 top-4 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-dark/50 text-cream/80 transition-colors duration-200 hover:bg-dark/70 hover:text-cream md:right-6 md:top-6 md:h-auto md:w-auto md:rounded-none md:bg-transparent"
               aria-label="Close gallery"
             >
-              <X size={28} strokeWidth={1.5} />
+              <X size={24} strokeWidth={1.5} className="md:h-7 md:w-7" />
             </button>
 
-            <div className="absolute top-6 left-1/2 -translate-x-1/2 text-[0.833rem] tabular-nums text-cream/50">
+            <div className="absolute top-4 left-1/2 -translate-x-1/2 text-[0.833rem] tabular-nums text-cream/50 md:top-6">
               {lightboxIndex + 1} / {images.length}
             </div>
 
@@ -153,15 +171,17 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
                 e.stopPropagation();
                 goPrev();
               }}
-              className="absolute left-4 z-10 text-cream/50 transition-colors duration-200 hover:text-cream"
+              className="absolute left-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-dark/40 text-cream/70 transition-colors duration-200 hover:bg-dark/60 hover:text-cream md:left-4 md:h-auto md:w-auto md:rounded-none md:bg-transparent md:text-cream/50"
               aria-label="Previous photo"
             >
-              <ChevronLeft size={40} strokeWidth={1} />
+              <ChevronLeft size={28} strokeWidth={1.5} className="md:h-10 md:w-10" />
             </button>
 
             <div
               className="relative h-[80vh] w-[90vw] max-w-5xl"
               onClick={(e) => e.stopPropagation()}
+              onTouchStart={handleTouchStart}
+              onTouchEnd={handleTouchEnd}
             >
               <AnimatePresence mode="wait">
                 <motion.div
@@ -188,10 +208,10 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
                 e.stopPropagation();
                 goNext();
               }}
-              className="absolute right-4 z-10 text-cream/50 transition-colors duration-200 hover:text-cream"
+              className="absolute right-2 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-dark/40 text-cream/70 transition-colors duration-200 hover:bg-dark/60 hover:text-cream md:right-4 md:h-auto md:w-auto md:rounded-none md:bg-transparent md:text-cream/50"
               aria-label="Next photo"
             >
-              <ChevronRight size={40} strokeWidth={1} />
+              <ChevronRight size={28} strokeWidth={1.5} className="md:h-10 md:w-10" />
             </button>
           </motion.div>
         )}
