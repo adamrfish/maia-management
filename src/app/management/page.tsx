@@ -131,46 +131,72 @@ export default function ManagementPage() {
         </div>
       </section>
 
-      {/* Our Services */}
-      <section className="relative z-[2] bg-cream-light">
+      {/* Photo break */}
+      <section className="relative z-[2] bg-cream">
         <div className="px-5 md:px-10">
-          <div className="mx-auto max-w-[75rem]">
+          <div className="mx-auto max-w-[60rem]">
+            <div className="border-t border-dark/10" />
+            <FadeIn>
+              <div className="grid grid-cols-2 gap-3 py-16 md:gap-4 md:py-24">
+                <Image
+                  src="/hero-pool.jpg"
+                  alt="Pool area at a Maia-managed property"
+                  width={850}
+                  height={500}
+                  className="w-full object-cover aspect-[4/3]"
+                />
+                <Image
+                  src="/apartments.jpg"
+                  alt="Maia-managed apartment building"
+                  width={850}
+                  height={500}
+                  className="w-full object-cover aspect-[4/3]"
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* Our Services */}
+      <section className="relative z-[2] bg-cream">
+        <div className="px-5 md:px-10">
+          <div className="mx-auto max-w-[60rem]">
+            <div className="border-t border-dark/10" />
             <div className="py-24 md:py-32">
               <FadeIn>
                 <div className="text-center">
-                  <p className="font-montserrat text-[0.694rem] font-normal uppercase tracking-[0.125em] text-dark">
+                  <p className="text-[0.694rem] uppercase tracking-[0.125em] text-gray-text">
                     Our Services
                   </p>
-                  <h2 className="mt-6 mb-6 font-montserrat text-[1.728rem] font-medium leading-[1.7] tracking-[0.025em] text-dark">
-                    Property management
+                  <h2 className="mt-6 mb-6 text-[1.44rem] font-medium tracking-[0.025em] md:text-[1.728rem]">
+                    Everything handled, nothing overlooked
                   </h2>
-                  <p className="mx-auto max-w-[48rem] font-montserrat text-[0.833rem] font-normal leading-[1.7] tracking-[0.05em] text-dark">
-                    Our property management services encompass comprehensive
-                    vendor coordination, thorough tenant screening, strategic
-                    marketing, and meticulous financial oversight. We handle every
-                    aspect to ensure your property is managed efficiently and
-                    profitably.
+                  <p className="mx-auto max-w-[44rem] text-[0.833rem] leading-[1.8] tracking-[0.05em] text-gray-text">
+                    From finding reliable tenants to keeping your property in
+                    exceptional condition — we take care of the details so you
+                    don&apos;t have to.
                   </p>
                 </div>
               </FadeIn>
 
               {/* 3x2 grid */}
-              <StaggerContainer stagger={0.08} delay={0.2} className="mt-12 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-16">
+              <StaggerContainer stagger={0.08} delay={0.2} className="mt-16 grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-16">
                 {services.map((service) => (
                   <StaggerItem key={service.title}>
                     <div className="flex flex-col items-center text-center">
-                      <div className="mb-6 flex h-16 w-16 items-center justify-center rounded-full border border-dark/20 bg-white">
+                      <div className="mb-6 flex h-14 w-14 items-center justify-center rounded-full border border-dark/10 bg-white">
                         <Image
                           src={service.icon}
                           alt={service.title}
-                          width={28}
-                          height={28}
+                          width={24}
+                          height={24}
                         />
                       </div>
-                      <div className="mb-4 font-montserrat text-[0.833rem] font-medium tracking-[0.05em] text-dark">
+                      <div className="mb-3 text-[0.833rem] font-medium tracking-[0.05em]">
                         {service.title}
                       </div>
-                      <p className="font-montserrat text-[0.833rem] font-normal leading-[1.7] tracking-[0.05em] text-gray-text">
+                      <p className="text-[0.833rem] leading-[1.8] tracking-[0.05em] text-gray-text">
                         {service.description}
                       </p>
                     </div>
@@ -182,10 +208,51 @@ export default function ManagementPage() {
         </div>
       </section>
 
+      {/* Promise / photo section */}
+      <section className="bg-cream">
+        <div className="px-5 md:px-10">
+          <div className="mx-auto max-w-[60rem]">
+            <div className="border-t border-dark/10" />
+            <FadeIn>
+              <div className="grid grid-cols-1 gap-12 py-20 md:grid-cols-[1fr_1.2fr] md:items-center md:gap-16 md:py-28">
+                <div>
+                  <p className="text-[0.694rem] uppercase tracking-[0.125em] text-gray-text">
+                    Our promise
+                  </p>
+                  <h3 className="mt-4 text-[1.44rem] font-medium tracking-[0.025em]">
+                    Your property, our priority
+                  </h3>
+                  <p className="mt-4 text-[0.833rem] leading-[1.8] tracking-[0.05em] text-gray-text">
+                    We treat every property as if it were our own. That means
+                    proactive maintenance, transparent reporting, and a team
+                    that&apos;s always reachable. Our 60-day satisfaction
+                    guarantee means you have nothing to lose.
+                  </p>
+                  <Link
+                    href="/management-inquiry"
+                    className="mt-8 inline-block border border-dark bg-dark px-8 py-3.5 text-[0.694rem] tracking-[0.075em] text-cream transition-colors duration-200 hover:bg-cream hover:text-dark"
+                  >
+                    Get a free consultation
+                  </Link>
+                </div>
+                <Image
+                  src="/coffee.jpg"
+                  alt="Property consultation"
+                  width={940}
+                  height={600}
+                  className="w-full object-cover aspect-[3/2]"
+                />
+              </div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
       {/* FAQ */}
       <section className="bg-cream">
         <div className="px-5 md:px-10">
           <div className="mx-auto max-w-[48rem]">
+            <div className="border-t border-dark/10" />
             <div className="py-16 md:py-24">
               <FadeIn>
                 <FAQSection title="Management FAQ" items={managementFAQ} />

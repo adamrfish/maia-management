@@ -144,22 +144,23 @@ export function Footer() {
                   <p>Miami Beach, FL 33139</p>
                 </div>
               </div>
-              <div className="mt-5 flex gap-4">
-                <a
-                  href="https://www.instagram.com/maia.mgmt/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="transition-opacity duration-200 hover:opacity-80"
-                >
+              <a
+                href="https://www.instagram.com/maia.mgmt/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 flex items-center gap-3 text-[0.833rem] tracking-[0.05em] text-cream/90 transition-colors duration-200 hover:text-cream"
+              >
+                <span className="flex h-7 w-7 flex-shrink-0 items-center justify-center rounded-full border border-cream/30 bg-white/10">
                   <Image
                     src="/social/ig.png"
-                    alt="Instagram"
-                    width={28}
-                    height={28}
-                    className="invert"
+                    alt=""
+                    width={13}
+                    height={13}
+                    className="invert opacity-60"
                   />
-                </a>
-              </div>
+                </span>
+                Instagram
+              </a>
             </div>
           </div>
         </div>
