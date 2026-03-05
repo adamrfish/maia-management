@@ -80,20 +80,20 @@ export default function ContactPage() {
                   <Suspense
                     fallback={
                       <div className="border border-dark/10 bg-white p-6 sm:p-8 md:p-10">
-                        <div className="h-3 w-24 animate-pulse bg-cream-mid" />
+                        <div className="h-3 w-24 animate-shimmer" />
                         <div className="mb-6 mt-2 border-t border-dark/10" />
                         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-                          <div className="h-12 animate-pulse bg-cream-mid" />
-                          <div className="h-12 animate-pulse bg-cream-mid" />
+                          <div className="h-12 animate-shimmer" />
+                          <div className="h-12 animate-shimmer" />
                         </div>
                         <div className="mt-5 grid grid-cols-1 gap-5 sm:grid-cols-2">
-                          <div className="h-12 animate-pulse bg-cream-mid" />
-                          <div className="h-12 animate-pulse bg-cream-mid" />
+                          <div className="h-12 animate-shimmer" />
+                          <div className="h-12 animate-shimmer" />
                         </div>
-                        <div className="mt-10 h-3 w-24 animate-pulse bg-cream-mid" />
+                        <div className="mt-10 h-3 w-24 animate-shimmer" />
                         <div className="mb-6 mt-2 border-t border-dark/10" />
-                        <div className="h-12 animate-pulse bg-cream-mid" />
-                        <div className="mt-5 h-32 animate-pulse bg-cream-mid" />
+                        <div className="h-12 animate-shimmer" />
+                        <div className="mt-5 h-32 animate-shimmer" />
                         <div className="mt-8 h-12 animate-pulse bg-dark/10" />
                       </div>
                     }

@@ -7,6 +7,7 @@ import Map, { Marker, NavigationControl } from "react-map-gl/mapbox";
 import type { MapRef } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, applyMaiaStyle } from "@/lib/map-style";
+import { MapSkeleton } from "@/components/map-skeleton";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
@@ -54,8 +55,8 @@ export const ListingLocationMap = dynamic(
   {
     ssr: false,
     loading: () => (
-      <div className="flex h-[18rem] items-center justify-center rounded-sm border border-border-light bg-cream-mid md:h-[24rem]">
-        <span className="text-[0.833rem] text-gray-text">Loading map...</span>
+      <div className="overflow-hidden rounded-sm border border-border-light">
+        <MapSkeleton className="h-[18rem] md:h-[24rem]" />
       </div>
     ),
   }

@@ -11,11 +11,11 @@ export default function ListingsLoading() {
           {/* Filter bar skeleton */}
           <div className="border-b border-border-light py-3">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-44 animate-pulse bg-cream-mid" />
-              <div className="hidden h-10 w-20 animate-pulse bg-cream-mid md:block" />
-              <div className="hidden h-10 w-20 animate-pulse bg-cream-mid md:block" />
-              <div className="hidden h-10 w-24 animate-pulse bg-cream-mid md:block" />
-              <div className="ml-auto h-10 w-24 animate-pulse bg-cream-mid" />
+              <div className="h-10 w-44 animate-shimmer" />
+              <div className="hidden h-10 w-20 animate-shimmer md:block" />
+              <div className="hidden h-10 w-20 animate-shimmer md:block" />
+              <div className="hidden h-10 w-24 animate-shimmer md:block" />
+              <div className="ml-auto h-10 w-24 animate-shimmer" />
             </div>
           </div>
 
@@ -28,14 +28,14 @@ export default function ListingsLoading() {
                     key={i}
                     className="border-b border-border-light px-5 py-4"
                   >
-                    <div className="aspect-[3/2] w-full animate-pulse bg-cream-mid" />
-                    <div className="mt-3 h-5 w-24 animate-pulse bg-cream-mid" />
-                    <div className="mt-2 h-3 w-36 animate-pulse bg-cream-mid" />
+                    <div className="aspect-[3/2] w-full animate-shimmer" />
+                    <div className="mt-3 h-5 w-24 animate-shimmer" />
+                    <div className="mt-2 h-3 w-36 animate-shimmer" />
                   </div>
                 ))}
               </div>
             </div>
-            <div className="h-[45dvh] shrink-0 animate-pulse bg-cream-mid lg:h-auto lg:min-h-0 lg:flex-1" />
+            <div className="h-[45dvh] shrink-0 animate-shimmer lg:h-auto lg:min-h-0 lg:flex-1" />
           </div>
         </div>
       </div>

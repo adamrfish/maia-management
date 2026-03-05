@@ -6,6 +6,7 @@ import Map, { Marker, NavigationControl } from "react-map-gl/mapbox";
 import type { MapRef } from "react-map-gl/mapbox";
 import "mapbox-gl/dist/mapbox-gl.css";
 import { MAP_STYLE, applyMaiaStyle } from "@/lib/map-style";
+import { MapSkeleton } from "@/components/map-skeleton";
 
 const MAPBOX_TOKEN = process.env.NEXT_PUBLIC_MAPBOX_TOKEN!;
 
@@ -47,8 +48,8 @@ function OfficeMapInner() {
 export const OfficeMap = dynamic(() => Promise.resolve(OfficeMapInner), {
   ssr: false,
   loading: () => (
-    <div className="flex h-[16rem] items-center justify-center border border-border-light bg-cream-mid md:h-[20rem]">
-      <span className="text-[0.833rem] text-gray-text">Loading map...</span>
+    <div className="border border-border-light overflow-hidden">
+      <MapSkeleton className="h-[16rem] md:h-[20rem]" />
     </div>
   ),
 });

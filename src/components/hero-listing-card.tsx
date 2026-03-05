@@ -66,12 +66,13 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
     >
       {/* Image carousel — 1/3 width, aspect ratio for intrinsic height */}
       <div
-        className="relative aspect-[4/3] w-1/3 flex-shrink-0 overflow-hidden"
+        className="relative aspect-[4/3] w-1/3 flex-shrink-0 overflow-hidden bg-cream-mid"
         onTouchStart={images.length > 1 ? handleTouchStart : undefined}
         onTouchEnd={images.length > 1 ? handleTouchEnd : undefined}
       >
         {images.length > 0 ? (
           <>
+            <div className="absolute inset-0 animate-shimmer" />
             {images.map((img, i) => (
               <div
                 key={img.id}
@@ -84,7 +85,7 @@ export function HeroListingCard({ listing, typeDelay = 0 }: HeroListingCardProps
                   alt={i === 0 ? listing.streetAddress : ""}
                   fill
                   sizes="11rem"
-                  className="object-cover"
+                  className="relative z-[1] object-cover"
                 />
               </div>
             ))}

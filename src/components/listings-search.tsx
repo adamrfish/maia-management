@@ -6,6 +6,7 @@ import { LayoutGrid, Map as MapIcon, Search } from "lucide-react";
 import type { Listing } from "@/types/listing";
 import { ListingCard } from "@/components/listing-card";
 import { StaggerContainer, StaggerItem } from "@/components/ui/motion-primitives";
+import { MapSkeleton } from "@/components/map-skeleton";
 
 const ListingsMap = dynamic(
   () =>
@@ -14,11 +15,7 @@ const ListingsMap = dynamic(
     })),
   {
     ssr: false,
-    loading: () => (
-      <div className="flex h-full items-center justify-center bg-cream-mid">
-        <span className="text-[0.833rem] text-gray-text">Loading map...</span>
-      </div>
-    ),
+    loading: () => <MapSkeleton className="h-full" />,
   }
 );
 

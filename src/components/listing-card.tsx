@@ -60,12 +60,13 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
 
   const imageCarousel = (
     <div
-      className="relative h-full w-full overflow-hidden"
+      className="relative h-full w-full overflow-hidden bg-cream-mid"
       onTouchStart={images.length > 1 ? handleTouchStart : undefined}
       onTouchEnd={images.length > 1 ? handleTouchEnd : undefined}
     >
       {images.length > 0 ? (
         <>
+          <div className="absolute inset-0 animate-shimmer" />
           {images.map((img, i) => (
             <div
               key={img.id}
@@ -78,7 +79,7 @@ export function ListingCard({ listing, carousel, compact }: ListingCardProps) {
                 alt={i === 0 ? listing.streetAddress : ""}
                 fill
                 sizes={compact ? "(max-width: 1024px) 100vw, 28rem" : carousel ? "22rem" : "(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"}
-                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                className="relative z-[1] object-cover transition-transform duration-500 group-hover:scale-105"
               />
             </div>
           ))}

@@ -78,14 +78,15 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
         {/* Primary image */}
         <button
           onClick={() => openLightbox(0)}
-          className="relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden"
+          className="relative aspect-[4/3] w-full cursor-zoom-in overflow-hidden bg-cream-mid"
         >
+          <div className="absolute inset-0 animate-shimmer" />
           <Image
             src={primary.url}
             alt={address}
             fill
             sizes="(max-width: 768px) 100vw, 66vw"
-            className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+            className="relative z-[1] object-cover transition-transform duration-500 hover:scale-[1.02]"
             priority
           />
         </button>
@@ -99,14 +100,15 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
                 <button
                   key={img.id}
                   onClick={() => openLightbox(i + 1)}
-                  className="relative aspect-[4/3] w-[70%] flex-shrink-0 snap-start cursor-zoom-in overflow-hidden"
+                  className="relative aspect-[4/3] w-[70%] flex-shrink-0 snap-start cursor-zoom-in overflow-hidden bg-cream-mid"
                 >
+                  <div className="absolute inset-0 animate-shimmer" />
                   <Image
                     src={img.url}
                     alt={address}
                     fill
                     sizes="70vw"
-                    className="object-cover"
+                    className="relative z-[1] object-cover"
                   />
                 </button>
               ))}
@@ -117,14 +119,15 @@ export function ListingGallery({ images, address }: ListingGalleryProps) {
                 <button
                   key={img.id}
                   onClick={() => openLightbox(i + 1)}
-                  className="relative w-full cursor-zoom-in overflow-hidden"
+                  className="relative w-full cursor-zoom-in overflow-hidden bg-cream-mid"
                 >
+                  <div className="absolute inset-0 animate-shimmer" />
                   <Image
                     src={img.url}
                     alt={address}
                     fill
                     sizes="20vw"
-                    className="object-cover transition-transform duration-500 hover:scale-[1.02]"
+                    className="relative z-[1] object-cover transition-transform duration-500 hover:scale-[1.02]"
                   />
                 </button>
               ))}

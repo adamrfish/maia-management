@@ -211,6 +211,23 @@ html {
   border-top-color: #fff;
 }
 
+/* Shimmer loading animation */
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.animate-shimmer {
+  background: linear-gradient(
+    90deg,
+    var(--color-cream-mid) 25%,
+    var(--color-cream-light) 37%,
+    var(--color-cream-mid) 63%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.8s ease-in-out infinite;
+}
+
 /* Hide Mapbox logo */
 .mapboxgl-ctrl-logo {
   display: none !important;

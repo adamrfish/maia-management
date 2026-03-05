@@ -3,6 +3,7 @@
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import type { Listing } from "@/types/listing";
+import { MapSkeleton } from "@/components/map-skeleton";
 
 const ListingsMap = dynamic(
   () =>
@@ -11,9 +12,7 @@ const ListingsMap = dynamic(
     })),
   {
     ssr: false,
-    loading: () => (
-      <div className="h-full w-full bg-cream-mid animate-pulse" />
-    ),
+    loading: () => <MapSkeleton className="h-[24rem] md:h-[28rem]" />,
   }
 );
 
