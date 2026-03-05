@@ -138,7 +138,7 @@ export default function ManagementPage() {
             <div className="border-t border-dark/10" />
             <FadeIn>
               <div className="grid grid-cols-2 gap-3 py-16 md:gap-4 md:py-24">
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[3/4] overflow-hidden sm:aspect-[4/3] md:aspect-[3/2]">
                   <Image
                     src="/hero-pool.webp"
                     alt="Pool area at a Maia-managed property"
@@ -147,7 +147,7 @@ export default function ManagementPage() {
                     className="object-cover object-center"
                   />
                 </div>
-                <div className="relative aspect-[4/3] overflow-hidden">
+                <div className="relative aspect-[3/4] overflow-hidden sm:aspect-[4/3] md:aspect-[3/2]">
                   <Image
                     src="/apartments.webp"
                     alt="Maia-managed apartment building"
@@ -239,7 +239,7 @@ export default function ManagementPage() {
                     Get a free consultation
                   </Link>
                 </div>
-                <div className="relative aspect-[3/2] overflow-hidden">
+                <div className="relative aspect-[4/5] overflow-hidden sm:aspect-[3/2]">
                   <Image
                     src="/coffee.webp"
                     alt="Property consultation"
