@@ -79,14 +79,14 @@ export default function AboutPage() {
       {/* Team / Bios — moved to top */}
       <section className="relative bg-cream">
         <Image
-          src="/leaf-left.png"
+          src="/leaf-left.webp"
           alt=""
           width={1218}
           height={800}
           className="pointer-events-none absolute left-0 top-0 z-0 h-[10rem] w-auto md:h-[16rem]"
         />
         <Image
-          src="/background.png"
+          src="/background.webp"
           alt=""
           width={837}
           height={600}

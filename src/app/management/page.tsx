@@ -87,14 +87,14 @@ export default function ManagementPage() {
       {/* Hero */}
       <section className="relative bg-cream">
         <Image
-          src="/leaf-left.png"
+          src="/leaf-left.webp"
           alt=""
           width={1218}
           height={800}
           className="pointer-events-none absolute left-0 top-0 z-0 h-[10rem] w-auto md:h-[16rem]"
         />
         <Image
-          src="/palm-right.png"
+          src="/palm-right.webp"
           alt=""
           width={837}
           height={600}
@@ -140,7 +140,7 @@ export default function ManagementPage() {
               <div className="grid grid-cols-2 gap-3 py-16 md:gap-4 md:py-24">
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src="/hero-pool.jpg"
+                    src="/hero-pool.webp"
                     alt="Pool area at a Maia-managed property"
                     fill
                     sizes="(max-width: 768px) 50vw, 30rem"
@@ -149,7 +149,7 @@ export default function ManagementPage() {
                 </div>
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <Image
-                    src="/apartments.jpg"
+                    src="/apartments.webp"
                     alt="Maia-managed apartment building"
                     fill
                     sizes="(max-width: 768px) 50vw, 30rem"
@@ -241,7 +241,7 @@ export default function ManagementPage() {
                 </div>
                 <div className="relative aspect-[3/2] overflow-hidden">
                   <Image
-                    src="/coffee.jpg"
+                    src="/coffee.webp"
                     alt="Property consultation"
                     fill
                     sizes="(max-width: 768px) 100vw, 36rem"

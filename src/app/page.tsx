@@ -122,7 +122,7 @@ export default function HomePage() {
                   {/* Find Apartments */}
                   <div className="flex flex-col items-center justify-center text-center">
                     <Image
-                      src="/hero-pool.jpg"
+                      src="/hero-pool.webp"
                       alt="Luxury pool in Miami Beach"
                       width={850}
                       height={500}
@@ -145,7 +145,7 @@ export default function HomePage() {
                   {/* Desktop: chair image */}
                   <div className="hidden md:block">
                     <Image
-                      src="/chair.jpg"
+                      src="/chair.webp"
                       alt=""
                       width={1358}
                       height={900}
@@ -160,7 +160,7 @@ export default function HomePage() {
                 <div className="mt-20 grid grid-cols-1 gap-32 pl-0 pr-0 md:grid-cols-[1.5fr_1fr] md:pl-12 md:pr-4">
                   <div>
                     <Image
-                      src="/coffee.jpg"
+                      src="/coffee.webp"
                       alt=""
                       width={940}
                       height={600}

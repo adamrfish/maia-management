@@ -25,7 +25,7 @@ export function HeroBackground() {
         style={{ scale: loadScale, transformOrigin: "top right" }}
       >
         <Image
-          src="/background.png"
+          src="/background.webp"
           alt=""
           width={838}
           height={600}
@@ -38,7 +38,7 @@ export function HeroBackground() {
         style={{ scale: loadScale, transformOrigin: "top left" }}
       >
         <Image
-          src="/leaf-left.png"
+          src="/leaf-left.webp"
           alt=""
           width={1218}
           height={800}
