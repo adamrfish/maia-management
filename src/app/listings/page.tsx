@@ -36,7 +36,7 @@ export default function ListingsPage() {
       </section>
 
       {/* Living experience section */}
-      <section className="border-t border-border-light bg-cream-light">
+      <section className="border-t border-border-light bg-cream">
         <div className="px-5 md:px-10">
           <div className="mx-auto max-w-[75rem]">
             <div className="grid grid-cols-1 gap-10 py-16 md:grid-cols-3 md:py-24">

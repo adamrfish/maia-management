@@ -276,8 +276,8 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
     return (
       <div className="px-5 md:px-10">
         <div className="mx-auto max-w-[75rem]">
-          {/* Sticky filter bar */}
-          <div className="sticky top-[3.5rem] z-20 -mx-5 border-b border-border-light bg-cream-light px-5 py-3 md:-mx-10 md:px-10">
+          {/* Filter bar */}
+          <div className="-mx-5 border-b border-border-light bg-cream px-5 py-3 md:-mx-10 md:px-10">
             {filterBar}
           </div>
           {filtered.length === 0 ? (
@@ -308,8 +308,8 @@ export function ListingsSearch({ listings }: ListingsSearchProps) {
   return (
     <div className="px-5 md:px-10">
       <div className="mx-auto max-w-[75rem]">
-        {/* Filter bar — sticky */}
-        <div className="sticky top-[3.5rem] z-20 -mx-5 border-b border-border-light bg-cream px-5 py-3 md:-mx-10 md:px-10">
+        {/* Filter bar */}
+        <div className="-mx-5 border-b border-border-light bg-cream px-5 py-3 md:-mx-10 md:px-10">
           <div className="mx-auto max-w-[75rem]">
             {filterBar}
           </div>
