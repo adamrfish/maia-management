@@ -138,20 +138,24 @@ export default function ManagementPage() {
             <div className="border-t border-dark/10" />
             <FadeIn>
               <div className="grid grid-cols-2 gap-3 py-16 md:gap-4 md:py-24">
-                <Image
-                  src="/hero-pool.jpg"
-                  alt="Pool area at a Maia-managed property"
-                  width={850}
-                  height={500}
-                  className="w-full object-cover aspect-[4/3]"
-                />
-                <Image
-                  src="/apartments.jpg"
-                  alt="Maia-managed apartment building"
-                  width={850}
-                  height={500}
-                  className="w-full object-cover aspect-[4/3]"
-                />
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/hero-pool.jpg"
+                    alt="Pool area at a Maia-managed property"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 30rem"
+                    className="object-cover"
+                  />
+                </div>
+                <div className="relative aspect-[4/3] overflow-hidden">
+                  <Image
+                    src="/apartments.jpg"
+                    alt="Maia-managed apartment building"
+                    fill
+                    sizes="(max-width: 768px) 50vw, 30rem"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -235,13 +239,15 @@ export default function ManagementPage() {
                     Get a free consultation
                   </Link>
                 </div>
-                <Image
-                  src="/coffee.jpg"
-                  alt="Property consultation"
-                  width={940}
-                  height={600}
-                  className="w-full object-cover aspect-[3/2]"
-                />
+                <div className="relative aspect-[3/2] overflow-hidden">
+                  <Image
+                    src="/coffee.jpg"
+                    alt="Property consultation"
+                    fill
+                    sizes="(max-width: 768px) 100vw, 36rem"
+                    className="object-cover"
+                  />
+                </div>
               </div>
             </FadeIn>
           </div>
